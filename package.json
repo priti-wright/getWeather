@@ -1,0 +1,49 @@
+{
+  "name": "@alpenglow/getWeather",
+  "version": "0.1.0",
+  "author": "Priti <ypmeier@gmail.com>",
+  "description": "The Weather package",
+  "main": "src/",
+  "repository": {
+    "type": "hg",
+    "url": "git@github.com:priti-wright/getWeather.git"
+  },
+  "scripts": {
+    "lint": "eslint --ext=.js,.jsx ./src --fix",
+    "lint-build": "mkdir -p reports; eslint --ext=.js,.jsx -f junit ./src > ./reports/eslint_`eslint -v`.xml",
+    "test": "npm run lint-build; karma start",
+    "test-watch": "karma start --no-single-run",
+    "watch": "webpack -wd --progress --output-path dist",
+    "start": "webpack-dev-server --hot --inline --devtool inline-source-map",
+    "build": "webpack -p",
+    "pretest": "rm -rf ./reports"
+  },
+  "dependencies": {
+    "classnames": "2.1.2",
+    "react": "0.13.3"
+  },
+  "devDependencies": {
+    "babel-core": "5.8.29",
+    "babel-eslint": "4.1.3",
+    "babel-loader": "5.3.2",
+    "core-js": "1.2.3",
+    "css-loader": "0.15.4",
+    "eslint": "1.7.3",
+    "eslint-plugin-react": "3.6.3",
+    "file-loader": "0.8.4",
+    "jasmine-core": "2.3.4",
+    "karma": "0.13.14",
+    "karma-es5-shim": "0.0.4",
+    "karma-jasmine": "0.3.6",
+    "karma-junit-reporter": "0.3.8",
+    "karma-mocha-reporter": "1.1.1",
+    "karma-phantomjs-launcher": "0.2.1",
+    "karma-sourcemap-loader": "0.3.6",
+    "karma-webpack": "1.7.0",
+    "lodash": "3.8.0",
+    "phantomjs": "1.9.18",
+    "sass-loader": "1.0.2",
+    "style-loader": "0.12.3",
+    "webpack": "1.12.2"
+  }
+}
